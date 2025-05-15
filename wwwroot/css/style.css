@@ -1,19 +1,8 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-.titulo-card {
-  position: relative;
-  top: 10px;
-  left: 14px;
-  font-size: 18pt;
-  font-weight: 500;
-}
 
-Footer {
-    background-color: #D97014;
-    color: #FFFFFF;
-    
-}
+ 
+  
 
-.text-endereco {
- position: relative;
- top: 27%;
+.footer {
+  background-color: #ff3300; /* Cor laranja */
+  color: #FFFFFF; /* Texto branco para contraste */
 }
