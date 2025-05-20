@@ -1,8 +1,6 @@
 
- 
-  
 
-.footer {
-  background-color: #ff3300; /* Cor laranja */
-  color: #FFFFFF; /* Texto branco para contraste */
+footer {
+  background-color: orange;
+  color: #fff;
 }
