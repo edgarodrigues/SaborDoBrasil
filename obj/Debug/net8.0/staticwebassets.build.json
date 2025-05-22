@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JQmxOfjOGXtTLpSmsZuzh1LatC3z9reGvqDefgUdmYM=",
+  "Hash": "MsghyXOCfYydel0QUi8+PDWCOZoDLn2EbUwBYhyvXPk=",
   "Source": "SaborDoBrasil",
   "BasePath": "_content/SaborDoBrasil",
   "Mode": "Default",
@@ -319,25 +319,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Manicoba.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\img\\Moqueca_baiana.jpg",
-      "SourceId": "SaborDoBrasil",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\",
-      "BasePath": "_content/SaborDoBrasil",
-      "RelativePath": "img/Moqueca_baiana.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Moqueca_baiana.jpg"
     },
     {
       "Identity": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\img\\Moqueca.jpg",
