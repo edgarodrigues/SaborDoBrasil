@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MsghyXOCfYydel0QUi8+PDWCOZoDLn2EbUwBYhyvXPk=",
+  "Hash": "bLzPvxtONRb5a5/aRzcUiwQ4tXT7Wroo8X5w9uF7OYs=",
   "Source": "SaborDoBrasil",
   "BasePath": "_content/SaborDoBrasil",
   "Mode": "Default",
@@ -378,12 +378,12 @@
       "OriginalItemSpec": "wwwroot\\img\\Polvo_ao_forno.jpg"
     },
     {
-      "Identity": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\img\\Risoto_de_cogumelos.jpg",
+      "Identity": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\img\\Risoto_de_cogumelo.jpg",
       "SourceId": "SaborDoBrasil",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\",
       "BasePath": "_content/SaborDoBrasil",
-      "RelativePath": "img/Risoto_de_cogumelos.jpg",
+      "RelativePath": "img/Risoto_de_cogumelo.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -394,7 +394,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Risoto_de_cogumelos.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\Risoto_de_cogumelo.jpg"
     },
     {
       "Identity": "C:\\Users\\Alunos\\Documents\\Edgar\\SaborDoBrasil\\wwwroot\\img\\Tortellini.jpg",

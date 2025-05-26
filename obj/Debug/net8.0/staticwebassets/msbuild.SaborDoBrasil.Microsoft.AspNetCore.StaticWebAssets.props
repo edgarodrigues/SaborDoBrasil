@@ -304,12 +304,12 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Polvo_ao_forno.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Risoto_de_cogumelos.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Risoto_de_cogumelo.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>SaborDoBrasil</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/SaborDoBrasil</BasePath>
-      <RelativePath>img/Risoto_de_cogumelos.jpg</RelativePath>
+      <RelativePath>img/Risoto_de_cogumelo.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -318,7 +318,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Risoto_de_cogumelos.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Risoto_de_cogumelo.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\Tortellini.jpg))">
       <SourceType>Package</SourceType>

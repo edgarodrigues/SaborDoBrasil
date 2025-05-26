@@ -11,13 +11,11 @@
 </head>
 
 <body>
-    
+
     <main class="container my-5 d-flex flex-column align-items-center position-relative">
         <!-- Logo no canto superior esquerdo da main -->
-        <img src="img/Logomarca_culinaria_sabor_Brasil.png"
-             alt="Logo Sabor do Brasil"
-             width="120" height="104"
-             class="position-absolute top-0 start-0 m-3">
+        <img src="img/Logomarca_culinaria_sabor_Brasil.png" alt="Logo Sabor do Brasil" width="120" height="104"
+            class="position-absolute top-0 start-0 m-3">
 
         <!-- Texto abaixo da logo no canto superior esquerdo -->
         <div class="position-absolute" style="top: 120px; left: 24px;">
@@ -35,8 +33,10 @@
                     <div class="card mb-4" style="width: 18rem;">
                         <img src="img/Feijoada_brasileira.jpg" class="card-img-top" alt="Feijoada brasileira">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like1')"><i class="bi bi-hand-thumbs-up"></i> <span id="like1">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike1')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike1">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like1')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like1">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike1')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike1">0</span></button>
                         </div>
                     </div>
                 </div>
@@ -46,56 +46,62 @@
                     <div class="card mb-4" style="width: 18rem;">
                         <img src="img/Moqueca.jpg" class="card-img-top" alt="Moqueca baiana">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like2')"><i class="bi bi-hand-thumbs-up"></i> <span id="like2">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike2')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike2">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like2')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like2">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike2')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike2">0</span></button>
                         </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="col-12 d-flex justify-content-center mb-2">
+                <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #f5911e;">Virado à paulista</span>
                     <div class="card mb-4" style="width: 18rem;">
                         <img src="img/Virado_a_paulista.jpg" class="card-img-top" alt="Virado à paulista">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Virado à paulista</h5>
-                            <button class="btn btn-success me-2" onclick="incrementLike('like3')"><i class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike3')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like3')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike3')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
                         </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="col-12 d-flex justify-content-center mb-2">
+                <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #f5911e;">Acarajé baiano</span>
                     <div class="card mb-4" style="width: 18rem;">
                         <img src="img/Acaraje_baiano.jpg" class="card-img-top" alt="Acarajé baiano">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Acarajé baiano</h5>
-                            <button class="btn btn-success me-2" onclick="incrementLike('like4')"><i class="bi bi-hand-thumbs-up"></i> <span id="like4">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike4')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike4">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like4')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike4')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
                         </div>
                     </div>
                 </div>
                 <!-- Card 5 -->
-                <div class="col-12 d-flex justify-content-center mb-2">
+                <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #f5911e;">Risoto de cogumelo</span>
                     <div class="card mb-4" style="width: 18rem;">
-                        <img src="img/Risoto_de_cogumelo.jpg" class="card-img-top" alt="Risoto de cogumelos">
+                        <img src="img/Risoto_de_cogumelo.jpg" class="card-img-top" alt="Risoto de cogumelo">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Risoto de cogumelos</h5>
-                            <button class="btn btn-success me-2" onclick="incrementLike('like5')"><i class="bi bi-hand-thumbs-up"></i> <span id="like5">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike5')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike5">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like5')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike5')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
                         </div>
                     </div>
                 </div>
                 <!-- Card 6 -->
-                <div class="col-12 d-flex justify-content-center mb-2">
+                <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #f5911e;">Tortellini</span>
                     <div class="card mb-4" style="width: 18rem;">
                         <img src="img/Tortellini.jpg" class="card-img-top" alt="Tortellini">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Tortellini</h5>
-                            <button class="btn btn-success me-2" onclick="incrementLike('like6')"><i class="bi bi-hand-thumbs-up"></i> <span id="like6">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike6')"><i class="bi bi-hand-thumbs-down"></i> <span id="dislike6">0</span></button>
+                            <button class="btn btn-success me-2" onclick="incrementLike('like6')"><i
+                                    class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
+                            <button class="btn btn-danger" onclick="incrementDislike('dislike6')"><i
+                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
                         </div>
                     </div>
                 </div>
