@@ -37,11 +37,14 @@
                                     class="bi bi-hand-thumbs-up"></i> <span id="like1">0</span></button>
                             <button class="btn btn-danger" onclick="incrementDislike('dislike1')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike1">0</span></button>
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <!-- Barra de comentários abaixo dos botões -->
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments1', 'input1')">
+                                <input id="input1" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments1" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -55,11 +58,14 @@
                                     class="bi bi-hand-thumbs-up"></i> <span id="like2">0</span></button>
                             <button class="btn btn-danger" onclick="incrementDislike('dislike2')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike2">0</span></button>
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <!-- Barra de comentários abaixo dos botões -->
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments2', 'input2')">
+                                <input id="input2" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments2" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -73,11 +79,14 @@
                                     class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
                             <button class="btn btn-danger" onclick="incrementDislike('dislike3')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <!-- Barra de comentários abaixo dos botões -->
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments3', 'input3')">
+                                <input id="input3" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments3" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -91,11 +100,14 @@
                                     class="bi bi-hand-thumbs-up"></i> <span id="like4">0</span></button>
                             <button class="btn btn-danger" onclick="incrementDislike('dislike4')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike4">0</span></button>
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <!-- Barra de comentários abaixo dos botões -->
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments4', 'input4')">
+                                <input id="input4" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments4" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -109,11 +121,14 @@
                                     class="bi bi-hand-thumbs-up"></i> <span id="like5">0</span></button>
                             <button class="btn btn-danger" onclick="incrementDislike('dislike5')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike5">0</span></button>
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <!-- Barra de comentários abaixo dos botões -->
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments5', 'input5')">
+                                <input id="input5" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments5" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -128,11 +143,13 @@
                             <button class="btn btn-danger" onclick="incrementDislike('dislike6')"><i
                                     class="bi bi-hand-thumbs-down"></i> <span id="dislike6">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
-                            <form class="d-flex mt-3">
-                                <input type="text" class="form-control form-control-sm" placeholder="Comente..."
+                            <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments6', 'input6')">
+                                <input id="input6" type="text" class="form-control form-control-sm" placeholder="Comente..."
                                     style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
+                            <!-- Lista de comentários -->
+                            <ul id="comments6" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
                     </div>
                 </div>
@@ -180,6 +197,27 @@
         function incrementDislike(id) {
             let el = document.getElementById(id);
             el.textContent = parseInt(el.textContent) + 1;
+        }
+
+        // Função para adicionar comentários com botão de excluir
+        function addComment(event, commentsId, inputId) {
+            event.preventDefault();
+            const input = document.getElementById(inputId);
+            const commentsList = document.getElementById(commentsId);
+            const comment = input.value.trim();
+            if (comment) {
+                const li = document.createElement('li');
+                li.className = "d-flex justify-content-between align-items-center";
+                li.innerHTML = `
+                    <span>${comment}</span>
+                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.parentElement.remove()">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                `;
+                commentsList.appendChild(li);
+                input.value = '';
+            }
+            return false;
         }
     </script>
 </body>
