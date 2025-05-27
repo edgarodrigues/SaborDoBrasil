@@ -35,36 +35,8 @@
         </div>
 
         <!-- Botão Entrar acima dos cards -->
-        <button type="button" class="btn btn-primary mb-4 align-self-end" style="width: 120px;" data-bs-toggle="modal"
-            data-bs-target="#loginModal">
-            Entrar
-        </button>
-
-        <!-- Modal de Login -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">Usuário</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
-                            </div>
-                            <div class="mb-3">
-                                <label for="senha" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Entrar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <a href="entrada.html" class="btn btn-primary mb-4 align-self-end" style="width: 120px;" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Entrar</a>
         <div class="p-4 mb-4 border rounded" style="background-color: #fff;">
             <div class="row justify-content-center">
                 <!-- Card 1 -->
@@ -223,6 +195,38 @@
 
         <p class="mb-2">© 2025 Sabor do Brasil - Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="button" class="btn" style="border:2px solid #D97014; color:#000; background:transparent; width:50%;" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn" style="background:#D97014; color:#FFF; width:50%;">
+                                Entrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
