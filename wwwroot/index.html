@@ -56,8 +56,13 @@
                     <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Feijoada_brasileira.jpg" class="card-img-top" alt="Feijoada brasileira">
                         <div class="card-body text-center">
+                            <!-- Lista de comentários -->
+                            <ul id="comments1" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <!-- Likes/Dislikes no canto inferior esquerdo -->
-                            <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
                                 <button class="btn me-2" style="border:none;" onclick="incrementLike('like1')">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
@@ -66,6 +71,18 @@
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike1" style="font-weight:bold;">0</span>
+                            </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm1')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments1', 'input1')">
+                                    <input id="input1" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -76,8 +93,13 @@
                     <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Moqueca.jpg" class="card-img-top" alt="Moqueca baiana">
                         <div class="card-body text-center">
+                            <!-- Lista de comentários -->
+                            <ul id="comments2" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <!-- Likes/Dislikes no canto inferior esquerdo -->
-                            <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
                                 <button class="btn me-2" style="border:none;" onclick="incrementLike('like2')">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
@@ -86,6 +108,18 @@
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike2" style="font-weight:bold;">0</span>
+                            </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm2')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments2', 'input2')">
+                                    <input id="input2" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -96,8 +130,13 @@
                     <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Virado_a_paulista.jpg" class="card-img-top" alt="Virado à paulista">
                         <div class="card-body text-center">
+                            <!-- Lista de comentários -->
+                            <ul id="comments3" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <!-- Likes/Dislikes no canto inferior esquerdo -->
-                            <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
                                 <button class="btn me-2" style="border:none;" onclick="incrementLike('like3')">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
@@ -106,6 +145,18 @@
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike3" style="font-weight:bold;">0</span>
+                            </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm3')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments3', 'input3')">
+                                    <input id="input3" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -116,8 +167,13 @@
                     <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Acaraje_baiano.jpg" class="card-img-top" alt="Acarajé baiano">
                         <div class="card-body text-center">
+                            <!-- Lista de comentários -->
+                            <ul id="comments4" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <!-- Likes/Dislikes no canto inferior esquerdo -->
-                            <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
                                 <button class="btn me-2" style="border:none;" onclick="incrementLike('like4')">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
@@ -127,6 +183,18 @@
                                 </button>
                                 <span id="dislike4" style="font-weight:bold;">0</span>
                             </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm4')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm4" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments4', 'input4')">
+                                    <input id="input4" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,10 +202,15 @@
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #000;">Risoto de cogumelos</span>
                     <div class="card mb-4" style="width: 27rem; position: relative;">
-                        <img src="img/Risoto_de_cogumelos.jpg" class="card-img-top" alt="Risoto de cogumelos">
+                        <img src="img/Risoto_de_cogumelo.jpg" class="card-img-top" alt="Risoto de cogumelos">
                         <div class="card-body text-center">
+                            <!-- Lista de comentários -->
+                            <ul id="comments5" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <!-- Likes/Dislikes no canto inferior esquerdo -->
-                            <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
                                 <button class="btn me-2" style="border:none;" onclick="incrementLike('like5')">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
@@ -147,28 +220,55 @@
                                 </button>
                                 <span id="dislike5" style="font-weight:bold;">0</span>
                             </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm5')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm5" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments5', 'input5')">
+                                    <input id="input5" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #000;">Tortellini</span>
-                    <div class="card mb-4" style="width: 27rem;">
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Tortellini.jpg" class="card-img-top" alt="Tortellini">
                         <div class="card-body text-center">
-                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like6')">
-                                <i class="bi bi-hand-thumbs-up"></i> <span id="like6">0</span>
-                            </button>
-                            <button class="btn" style="border:none;" onclick="incrementDislike('dislike6')">
-                                <i class="bi bi-hand-thumbs-down"></i> <span id="dislike6">0</span>
-                            </button>
-                            <!-- Barra de comentários abaixo dos botões -->
-                            <span class="d-inline-flex align-items-center mt-3">
-                                <i class="bi bi-chat-left-fill" style="color:#D97014; font-size:1.2em;"></i>
-                                <span id="commentCount6" style="margin-left:4px; font-weight:bold;">0</span>
-                            </span>
                             <!-- Lista de comentários -->
                             <ul id="comments6" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
+                        </div>
+                        <!-- Rodapé do card para like/dislike e comentário -->
+                        <div class="card-footer bg-white border-0 p-0" style="position: relative;">
+                            <!-- Likes/Dislikes no canto inferior esquerdo, igual aos outros cards -->
+                            <div style="display: inline-block; padding: 10px 0 10px 10px;">
+                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like6')">
+                                    <i class="bi bi-hand-thumbs-up"></i>
+                                </button>
+                                <span id="like6" style="font-weight:bold;">0</span>
+                                <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike6')">
+                                    <i class="bi bi-hand-thumbs-down"></i>
+                                </button>
+                                <span id="dislike6" style="font-weight:bold;">0</span>
+                            </div>
+                            <!-- Ícone de comentário no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                                <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
+                                    onclick="toggleCommentForm('commentForm6')"></i>
+                            </div>
+                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
+                            <div id="commentForm6" style="display:none; padding: 10px 10px 0 10px;">
+                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments6', 'input6')">
+                                    <input id="input6" type="text" class="form-control form-control-sm" placeholder="Comente...">
+                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,6 +346,110 @@
         </div>
     </div>
 
+    <!-- Modais de Comentário -->
+    <div class="modal fade" id="commentModal1" tabindex="-1" aria-labelledby="commentModalLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel1">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments1" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments1', 'input1')">
+              <input id="input1" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="commentModal2" tabindex="-1" aria-labelledby="commentModalLabel2" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel2">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments2" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments2', 'input2')">
+              <input id="input2" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="commentModal3" tabindex="-1" aria-labelledby="commentModalLabel3" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel3">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments3" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments3', 'input3')">
+              <input id="input3" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="commentModal4" tabindex="-1" aria-labelledby="commentModalLabel4" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel4">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments4" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments4', 'input4')">
+              <input id="input4" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="commentModal5" tabindex="-1" aria-labelledby="commentModalLabel5" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel5">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments5" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments5', 'input5')">
+              <input id="input5" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="commentModal6" tabindex="-1" aria-labelledby="commentModalLabel6" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="commentModalLabel6">Comentários</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body">
+            <ul id="comments6" class="list-unstyled mb-3"></ul>
+            <form class="d-flex" onsubmit="return addComment(event, 'comments6', 'input6')">
+              <input id="input6" type="text" class="form-control form-control-sm" placeholder="Comente...">
+              <button class="btn btn-sm btn-primary ms-1">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
@@ -275,8 +479,8 @@
             document.getElementById('main-dislike').textContent = totalDislikes;
         }
 
-        // Função para adicionar comentários com botão de excluir, editar e atualizar contador
-        function addComment(event, commentsId, inputId, countId) {
+        // Função para adicionar comentários com botão de excluir
+        function addComment(event, commentsId, inputId) {
             event.preventDefault();
             const input = document.getElementById(inputId);
             const commentsList = document.getElementById(commentsId);
@@ -285,62 +489,20 @@
                 const li = document.createElement('li');
                 li.className = "d-flex justify-content-between align-items-center";
                 li.innerHTML = `
-                    <span class="comment-text">${comment}</span>
-                    <div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary me-1" onclick="editComment(this)">
-                            <i class="bi bi-pencil"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" onclick="this.closest('li').remove(); updateCommentCount('${commentsId}', '${countId}')">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </div>
+                    <span>${comment}</span>
+                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.parentElement.remove()">
+                        <i class="bi bi-trash"></i>
+                    </button>
                 `;
                 commentsList.appendChild(li);
                 input.value = '';
-                updateCommentCount(commentsId, countId);
             }
             return false;
         }
 
-        // Função para editar comentário
-        function editComment(btn) {
-            const li = btn.closest('li');
-            const span = li.querySelector('.comment-text');
-            const originalText = span.textContent;
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.value = originalText;
-            input.className = 'form-control form-control-sm';
-            input.style.maxWidth = '200px';
-
-            // Substitui o texto pelo input
-            li.replaceChild(input, span);
-
-            // Troca o botão editar por salvar
-            btn.innerHTML = '<i class="bi bi-check-lg"></i>';
-            btn.classList.remove('btn-outline-secondary');
-            btn.classList.add('btn-outline-success');
-            btn.onclick = function () {
-                span.textContent = input.value.trim() || originalText;
-                li.replaceChild(span, input);
-                btn.innerHTML = '<i class="bi bi-pencil"></i>';
-                btn.classList.remove('btn-outline-success');
-                btn.classList.add('btn-outline-secondary');
-                btn.onclick = function () { editComment(btn); };
-            };
-
-            // Foco no input
-            input.focus();
-            input.onkeydown = function (e) {
-                if (e.key === 'Enter') btn.onclick();
-            };
-        }
-
-        // Atualiza o contador de comentários
-        function updateCommentCount(commentsId, countId) {
-            const commentsList = document.getElementById(commentsId);
-            const count = commentsList ? commentsList.children.length : 0;
-            document.getElementById(countId).textContent = count;
+        function toggleCommentForm(formId) {
+            const el = document.getElementById(formId);
+            el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
         }
     </script>
 </body>
