@@ -36,130 +36,172 @@
 
         <!-- Botões Entrar e Cadastrar acima dos cards -->
         <div class="d-flex mb-4 align-self-end gap-2" style="width: 260px;">
-            <a href="entrada.html" class="btn w-50" style="background:orange; color: #fff;" #loginModal">Entrar</a>
-            <a href="cadastro.html" class="btn w-50" style="background:orange; color:#FFF; border:2px solid ;">Cadastrar</a>
+            <a href="entrada.html" class="btn w-50" style="background:orange; color: #fff;" #loginModal>Entrar</a>
+            <a href="cadastro.html" class="btn w-50"
+                style="background:orange; color:#FFF; border:2px solid ;">Cadastrar</a>
         </div>
+
+        <!-- Palavra "Publicações" centralizada acima dos cards -->
+        <h2 class="mb-4 text-center w-100" style="font-weight: bold; color: #222;">Publicações</h2>
+
         <div class="p-4 mb-4 border rounded" style="background-color: #fff;">
             <div class="row justify-content-center">
                 <!-- Card 1 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Feijoada brasileira</span>
-                    <div class="card mb-4" style="width: 27rem;">
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Feijoada brasileira</span>
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Feijoada_brasileira.jpg" class="card-img-top" alt="Feijoada brasileira">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like1')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like1">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike1')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike1">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments1', 'input1')">
-                                <input id="input1" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input1" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
                             <ul id="comments1" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
+                        <!-- Likes/Dislikes no canto inferior esquerdo -->
+                        <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like1')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <span id="like1" style="font-weight:bold;">0</span>
+                            <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike1')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                            <span id="dislike1" style="font-weight:bold;">0</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Moqueca baiana</span>
-                    <div class="card mb-4" style="width: 27rem;">
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Moqueca baiana</span>
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Moqueca.jpg" class="card-img-top" alt="Moqueca baiana">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like2')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like2">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike2')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike2">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments2', 'input2')">
-                                <input id="input2" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input2" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
                             <ul id="comments2" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
+                        <!-- Likes/Dislikes no canto inferior esquerdo -->
+                        <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like2')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <span id="like2" style="font-weight:bold;">0</span>
+                            <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike2')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                            <span id="dislike2" style="font-weight:bold;">0</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Virado à paulista</span>
-                    <div class="card mb-4" style="width: 27rem;">
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Virado à paulista</span>
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Virado_a_paulista.jpg" class="card-img-top" alt="Virado à paulista">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like3')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like3">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike3')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike3">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments3', 'input3')">
-                                <input id="input3" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input3" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
                             <ul id="comments3" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
+                        <!-- Likes/Dislikes no canto inferior esquerdo -->
+                        <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like3')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <span id="like3" style="font-weight:bold;">0</span>
+                            <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike3')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                            <span id="dislike3" style="font-weight:bold;">0</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Acarajé baiano</span>
-                    <div class="card mb-4" style="width: 27rem;">
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Acarajé baiano</span>
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
                         <img src="img/Acaraje_baiano.jpg" class="card-img-top" alt="Acarajé baiano">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like4')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like4">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike4')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike4">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments4', 'input4')">
-                                <input id="input4" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input4" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
                             <ul id="comments4" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
+                        <!-- Likes/Dislikes no canto inferior esquerdo -->
+                        <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like4')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <span id="like4" style="font-weight:bold;">0</span>
+                            <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike4')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                            <span id="dislike4" style="font-weight:bold;">0</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 5 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Risoto de cogumelo</span>
-                    <div class="card mb-4" style="width: 27rem;">
-                        <img src="img/Risoto_de_cogumelo.jpg" class="card-img-top" alt="Risoto de cogumelo">
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Risoto de cogumelos</span>
+                    <div class="card mb-4" style="width: 27rem; position: relative;">
+                        <img src="img/Risoto_de_cogumelos.jpg" class="card-img-top" alt="Risoto de cogumelos">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like5')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like5">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike5')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike5">0</span></button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments5', 'input5')">
-                                <input id="input5" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input5" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
                             <ul id="comments5" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
+                        <!-- Likes/Dislikes no canto inferior esquerdo -->
+                        <div style="position: absolute; left: 0; bottom: 0; padding: 10px;">
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like5')">
+                                <i class="bi bi-hand-thumbs-up"></i>
+                            </button>
+                            <span id="like5" style="font-weight:bold;">0</span>
+                            <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike5')">
+                                <i class="bi bi-hand-thumbs-down"></i>
+                            </button>
+                            <span id="dislike5" style="font-weight:bold;">0</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
-                    <span class="mb-1" style="font-weight: bold; color: #f5911e;">Tortellini</span>
+                    <span class="mb-1" style="font-weight: bold; color: #000;">Tortellini</span>
                     <div class="card mb-4" style="width: 27rem;">
                         <img src="img/Tortellini.jpg" class="card-img-top" alt="Tortellini">
                         <div class="card-body text-center">
-                            <button class="btn btn-success me-2" onclick="incrementLike('like6')"><i
-                                    class="bi bi-hand-thumbs-up"></i> <span id="like6">0</span></button>
-                            <button class="btn btn-danger" onclick="incrementDislike('dislike6')"><i
-                                    class="bi bi-hand-thumbs-down"></i> <span id="dislike6">0</span></button>
+                            <button class="btn me-2" style="border:none;" onclick="incrementLike('like6')">
+                                <i class="bi bi-hand-thumbs-up"></i> <span id="like6">0</span>
+                            </button>
+                            <button class="btn" style="border:none;" onclick="incrementDislike('dislike6')">
+                                <i class="bi bi-hand-thumbs-down"></i> <span id="dislike6">0</span>
+                            </button>
                             <!-- Barra de comentários abaixo dos botões -->
                             <form class="d-flex mt-3" onsubmit="return addComment(event, 'comments6', 'input6')">
-                                <input id="input6" type="text" class="form-control form-control-sm" placeholder="Comente..."
-                                    style="font-size: 0.9em;">
+                                <input id="input6" type="text" class="form-control form-control-sm"
+                                    placeholder="Comente..." style="font-size: 0.9em;">
                                 <button class="btn btn-sm btn-primary ms-1" style="font-size: 0.8em;">Enviar</button>
                             </form>
                             <!-- Lista de comentários -->
@@ -217,7 +259,9 @@
                             <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
                         </div>
                         <div class="d-flex gap-2">
-                            <button type="button" class="btn" style="border:2px solid #D97014; color:#000; background:transparent; width:50%;" data-bs-dismiss="modal">
+                            <button type="button" class="btn"
+                                style="border:2px solid #D97014; color:#000; background:transparent; width:50%;"
+                                data-bs-dismiss="modal">
                                 Cancelar
                             </button>
                             <button type="submit" class="btn" style="background:#D97014; color:#FFF; width:50%;">
