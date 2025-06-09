@@ -36,7 +36,7 @@
 
         <!-- Botões Entrar e Cadastrar acima dos cards -->
         <div class="d-flex mb-4 align-self-end gap-2" style="width: 260px;">
-            <a href="entrada.html" class="btn w-50" style="background:orange; color: #fff;" #loginModal>Entrar</a>
+            <a href="#" class="btn w-50" style="background:orange; color: #fff;" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar</a>
             <a href="cadastro.html" class="btn w-50"
                 style="background:orange; color:#FFF; border:2px solid ;">Cadastrar</a>
         </div>
@@ -83,17 +83,17 @@
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea1">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments1','floatingTextarea1','commentCount1')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea1">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments1','floatingTextarea1','commentCount1')">Enviar</button>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -128,17 +128,17 @@
                                 <span id="commentCount2" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea2"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea2">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments2','floatingTextarea2','commentCount2')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea2"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments2','floatingTextarea2','commentCount2')">Enviar</button>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -173,17 +173,17 @@
                                 <span id="commentCount3" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea3"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea3">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments3','floatingTextarea3','commentCount3')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea3"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea3">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments3','floatingTextarea3','commentCount3')">Enviar</button>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -218,17 +218,17 @@
                                 <span id="commentCount4" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm4" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea4"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea4">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments4','floatingTextarea4','commentCount4')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm4" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea4"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea4">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments4','floatingTextarea4','commentCount4')">Enviar</button>
                 </div>
                 <!-- Card 5 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -263,17 +263,17 @@
                                 <span id="commentCount5" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm5" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea5"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea5">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments5','floatingTextarea5','commentCount5')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm5" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea5"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea5">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments5','floatingTextarea5','commentCount5')">Enviar</button>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -308,17 +308,17 @@
                                 <span id="commentCount6" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Formulário de comentário: dentro do card, logo após o card-footer -->
+                        <div id="commentForm6" style="display:none; padding: 10px 10px 0 10px;">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea6"
+                                    style="height: 100px"></textarea>
+                                <label for="floatingTextarea6">Comentário</label>
+                            </div>
+                            <button class="btn btn-sm btn-primary mt-2 float-end"
+                                onclick="submitFloatingComment('comments6','floatingTextarea6','commentCount6')">Enviar</button>
+                        </div>
                     </div>
-                </div>
-                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
-                <div id="commentForm6" style="display:none; padding: 10px 10px 0 10px;">
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea6"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea6">Comentário</label>
-                    </div>
-                    <button class="btn btn-sm btn-primary mt-2 float-end"
-                        onclick="submitFloatingComment('comments6','floatingTextarea6','commentCount6')">Enviar</button>
                 </div>
             </div>
         </div>
@@ -362,36 +362,29 @@
 
     <!-- Modal de Login -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label">Usuário</label>
-                            <input type="text" class="form-control" id="usuario" placeholder="Digite seu usuário">
-                        </div>
-                        <div class="mb-3">
-                            <label for="senha" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
-                        </div>
-                        <div class="d-flex gap-2">
-                            <button type="button" class="btn"
-                                style="border:2px solid #D97014; color:#000; background:transparent; width:50%;"
-                                data-bs-dismiss="modal">
-                                Cancelar
-                            </button>
-                            <button type="submit" class="btn" style="background:#D97014; color:#FFF; width:50%;">
-                                Entrar
-                            </button>
-                        </div>
-                    </form>
-                </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form onsubmit="return loginRedirect(event)">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="loginEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginSenha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="loginSenha" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn" style="background:#D97014; color:#FFF; width:50%;">Entrar</button>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Modais de Comentário -->
@@ -561,6 +554,9 @@
             }
         }
 
+        // Exemplo de como adicionar a opção de editar comentários em cada card
+
+        // Altere a função submitFloatingComment para incluir o botão de editar:
         function submitFloatingComment(commentsId, textareaId, countId) {
             const textarea = document.getElementById(textareaId);
             const commentsList = document.getElementById(commentsId);
@@ -569,10 +565,15 @@
                 const li = document.createElement('li');
                 li.className = "d-flex justify-content-between align-items-center";
                 li.innerHTML = `
-                    <span>${comment}</span>
-                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.parentElement.remove()">
-                        <i class="bi bi-trash"></i>
-                    </button>
+                    <span class="comment-text">${comment}</span>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary ms-2" onclick="editComment(this)">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.parentElement.parentElement.remove(); updateCommentCount('${commentsId}','${countId}')">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
                 `;
                 commentsList.appendChild(li);
                 textarea.value = '';
@@ -580,6 +581,46 @@
                 const countEl = document.getElementById(countId);
                 countEl.textContent = parseInt(countEl.textContent) + 1;
             }
+        }
+
+        // Atualiza a contagem de comentários ao excluir
+        function updateCommentCount(commentsId, countId) {
+            const commentsList = document.getElementById(commentsId);
+            const countEl = document.getElementById(countId);
+            countEl.textContent = commentsList.children.length;
+        }
+
+        // Função para editar comentário
+        function editComment(editBtn) {
+            const li = editBtn.closest('li');
+            const span = li.querySelector('.comment-text');
+            const originalText = span.textContent;
+            // Cria um input para edição
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = originalText;
+            input.className = 'form-control form-control-sm';
+            input.style.maxWidth = '200px';
+            span.replaceWith(input);
+            input.focus();
+
+            // Salva ao pressionar Enter ou perder o foco
+            input.onblur = input.onkeydown = function(e) {
+                if (e.type === 'blur' || (e.type === 'keydown' && e.key === 'Enter')) {
+                    const newText = input.value.trim() || originalText;
+                    const newSpan = document.createElement('span');
+                    newSpan.className = 'comment-text';
+                    newSpan.textContent = newText;
+                    input.replaceWith(newSpan);
+                }
+            };
+        }
+
+        function loginRedirect(event) {
+            event.preventDefault();
+            // Aqui você pode validar os campos se desejar
+            window.location.href = "perfil.html"; // Altere para o nome correto da página de perfil do usuário
+            return false;
         }
     </script>
 </body>
