@@ -76,21 +76,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm1')"></i>
+                                    onclick="toggleCommentForm('commentForm1', 'floatingTextarea1')"></i>
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments1', 'input1')">
-                                    <input id="input1" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea1">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments1','floatingTextarea1','commentCount1')">Enviar</button>
                 </div>
                 <!-- Card 2 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -118,21 +121,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">Salvador, BA</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm2')"></i>
+                                    onclick="toggleCommentForm('commentForm2', 'floatingTextarea2')"></i>
                                 <span id="commentCount2" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments2', 'input2')">
-                                    <input id="input2" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea2"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea2">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments2','floatingTextarea2','commentCount2')">Enviar</button>
                 </div>
                 <!-- Card 3 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -160,21 +166,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm3')"></i>
+                                    onclick="toggleCommentForm('commentForm3', 'floatingTextarea3')"></i>
                                 <span id="commentCount3" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments3', 'input3')">
-                                    <input id="input3" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea3"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea3">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments3','floatingTextarea3','commentCount3')">Enviar</button>
                 </div>
                 <!-- Card 4 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -202,21 +211,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">Salvador, BA</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm4')"></i>
+                                    onclick="toggleCommentForm('commentForm4', 'floatingTextarea4')"></i>
                                 <span id="commentCount4" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm4" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments4', 'input4')">
-                                    <input id="input4" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm4" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea4"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea4">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments4','floatingTextarea4','commentCount4')">Enviar</button>
                 </div>
                 <!-- Card 5 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -244,21 +256,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm5')"></i>
+                                    onclick="toggleCommentForm('commentForm5', 'floatingTextarea5')"></i>
                                 <span id="commentCount5" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm5" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments5', 'input5')">
-                                    <input id="input5" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm5" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea5"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea5">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments5','floatingTextarea5','commentCount5')">Enviar</button>
                 </div>
                 <!-- Card 6 -->
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
@@ -286,21 +301,24 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
-                            <!-- Ícone de comentário no canto inferior direito -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px;">
+                            <!-- Balão de comentário e número: sempre fixos no canto inferior direito -->
+                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm6')"></i>
+                                    onclick="toggleCommentForm('commentForm6', 'floatingTextarea6')"></i>
                                 <span id="commentCount6" style="font-weight:bold; margin-left:4px;">0</span>
-                            </div>
-                            <!-- Formulário de comentário oculto inicialmente, ocupa toda a largura do rodapé -->
-                            <div id="commentForm6" style="display:none; padding: 10px 10px 0 10px;">
-                                <form class="d-flex mt-2" onsubmit="return addComment(event, 'comments6', 'input6')">
-                                    <input id="input6" type="text" class="form-control form-control-sm" placeholder="Comente...">
-                                    <button class="btn btn-sm btn-primary ms-1">Enviar</button>
-                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <!-- Formulário de comentário: fora do card-footer, logo após o rodapé, ocupa toda a largura do card -->
+                <div id="commentForm6" style="display:none; padding: 10px 10px 0 10px;">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea6"
+                            style="height: 100px"></textarea>
+                        <label for="floatingTextarea6">Comentário</label>
+                    </div>
+                    <button class="btn btn-sm btn-primary mt-2 float-end"
+                        onclick="submitFloatingComment('comments6','floatingTextarea6','commentCount6')">Enviar</button>
                 </div>
             </div>
         </div>
@@ -530,9 +548,38 @@
             return false;
         }
 
-        function toggleCommentForm(formId) {
+        function toggleCommentForm(formId, textareaId) {
             const el = document.getElementById(formId);
-            el.style.display = (el.style.display === "none" || el.style.display === "") ? "block" : "none";
+            if (el.style.display === "none" || el.style.display === "") {
+                el.style.display = "block";
+                setTimeout(() => {
+                    const textarea = document.getElementById(textareaId);
+                    if (textarea) textarea.focus();
+                }, 100);
+            } else {
+                el.style.display = "none";
+            }
+        }
+
+        function submitFloatingComment(commentsId, textareaId, countId) {
+            const textarea = document.getElementById(textareaId);
+            const commentsList = document.getElementById(commentsId);
+            const comment = textarea.value.trim();
+            if (comment) {
+                const li = document.createElement('li');
+                li.className = "d-flex justify-content-between align-items-center";
+                li.innerHTML = `
+                    <span>${comment}</span>
+                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.parentElement.remove()">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                `;
+                commentsList.appendChild(li);
+                textarea.value = '';
+                // Atualiza a contagem de comentários
+                const countEl = document.getElementById(countId);
+                countEl.textContent = parseInt(countEl.textContent) + 1;
+            }
         }
     </script>
 </body>
