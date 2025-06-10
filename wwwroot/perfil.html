@@ -28,8 +28,8 @@
                 Trocar foto
             </button>
             <hr style="border: none; border-top: 3px solid rgba(245, 145, 30, 0.932); width: 110px; margin: 4px 0 0 0;">
-            <!-- Likes e dislikes AGORA abaixo da linha laranja -->
-            <div class="mt-3 d-flex flex-row gap-4 justify-content-center">
+            <!-- Likes e dislikes alinhados à esquerda, logo abaixo da linha laranja -->
+            <div class="mt-3" style="display: flex; flex-direction: row; gap: 24px; justify-content: flex-start; width: 110px;">
                 <div>
                     <span id="main-like" style="font-size: 1.3em; font-weight: bold;">0</span><br>
                     <span style="font-size: 0.85em;">likes</span>
@@ -77,13 +77,14 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
+                            <!-- Balão de comentário e número -->
                             <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
                                     onclick="toggleCommentForm('commentForm1', 'floatingTextarea1')"></i>
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
-                        <!-- Barra de comentário igual ao index -->
+                        <!-- Barra de comentário: aparece ao clicar no balão -->
                         <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
@@ -235,6 +236,43 @@
       </div>
     </div>
 
+    <!-- Exemplo de formulário de cadastro funcional para a aba "Cadastrar" (cadastro.html) -->
+
+<!-- Adicione este formulário dentro do <body> da sua página cadastro.html -->
+<div class="container mt-5" style="max-width: 400px;">
+    <h2 class="mb-4 text-center">Cadastro</h2>
+    <form id="cadastroForm" onsubmit="return cadastrarUsuario(event)">
+        <div class="mb-3">
+            <label for="nomeCadastro" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeCadastro" required>
+        </div>
+        <div class="mb-3">
+            <label for="emailCadastro" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="emailCadastro" required>
+        </div>
+        <div class="mb-3">
+            <label for="senhaCadastro" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senhaCadastro" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    </form>
+    <div id="cadastroMsg" class="mt-3 text-success text-center" style="display:none;">
+        Cadastro realizado com sucesso!
+    </div>
+</div>
+
+<script>
+function cadastrarUsuario(event) {
+    event.preventDefault();
+    // Aqui você pode adicionar validação extra ou salvar no localStorage
+    document.getElementById('cadastroMsg').style.display = 'block';
+    setTimeout(() => {
+        window.location.href = "index.html"; // Redireciona para a página principal após cadastro
+    }, 1500);
+    return false;
+}
+</script>
+
     <!-- Modais de Comentário (se usar modais) -->
     <!-- ...copie os modais de comentário do index.html, se necessário... -->
 
@@ -292,6 +330,20 @@ function submitFloatingComment(commentsId, textareaId, countId) {
 <script>
 function logoutRedirect() {
     window.location.href = "index.html";
+}
+</script>
+<script>
+function toggleCommentForm(formId, textareaId) {
+    const el = document.getElementById(formId);
+    if (el.style.display === "none" || el.style.display === "") {
+        el.style.display = "block";
+        setTimeout(() => {
+            const textarea = document.getElementById(textareaId);
+            if (textarea) textarea.focus();
+        }, 100);
+    } else {
+        el.style.display = "none";
+    }
 }
 </script>
 </body>

@@ -622,6 +622,39 @@
             window.location.href = "perfil.html"; // Altere para o nome correto da página de perfil do usuário
             return false;
         }
+
+        const likedPosts = {};
+
+function incrementLike(likeId, iconId) {
+    // Impede múltiplos likes na mesma publicação
+    if (likedPosts[likeId]) {
+        alert("Você já curtiu esta publicação!");
+        return;
+    }
+    const likeSpan = document.getElementById(likeId);
+    let count = parseInt(likeSpan.textContent, 10) || 0;
+    likeSpan.textContent = count + 1;
+    likedPosts[likeId] = true;
+
+    // Muda a cor do ícone para vermelho
+    const icon = document.getElementById(iconId);
+    if (icon) {
+        icon.style.color = "#FF0000";
+        // Se for SVG, pode usar: icon.setAttribute("fill", "#FF0000");
+    }
+}
+
+function incrementDislike(dislikeId) {
+    // Impede múltiplos dislikes na mesma publicação
+    if (likedPosts[dislikeId]) {
+        alert("Você já marcou dislike nesta publicação!");
+        return;
+    }
+    const dislikeSpan = document.getElementById(dislikeId);
+    let count = parseInt(dislikeSpan.textContent, 10) || 0;
+    dislikeSpan.textContent = count + 1;
+    likedPosts[dislikeId] = true;
+}
     </script>
 </body>
 
