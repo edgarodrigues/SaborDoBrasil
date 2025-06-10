@@ -21,14 +21,14 @@
         <!-- Campo para editar o nome do perfil -->
         <div class="position-absolute" style="top: 120px; left: 24px;">
             <input id="profile-name" type="text" value="Usuario_01"
-                style="font-size: 1rem; color: #333; border:none; border-bottom:1px solid #ccc; background:transparent; width:120px; outline:none;">
+                style="font-size: 1rem; color: #333; border:none; background:transparent; width:120px; outline:none;">
             <!-- Botão de trocar foto logo abaixo do nome -->
             <button type="button" class="btn btn-sm btn-outline-secondary mt-2 mb-2"
                 onclick="document.getElementById('profile-pic-input').click();">
                 Trocar foto
             </button>
             <hr style="border: none; border-top: 3px solid rgba(245, 145, 30, 0.932); width: 110px; margin: 4px 0 0 0;">
-            <!-- Likes e dislikes lado a lado -->
+            <!-- Likes e dislikes AGORA abaixo da linha laranja -->
             <div class="mt-3 d-flex flex-row gap-4 justify-content-center">
                 <div>
                     <span id="main-like" style="font-size: 1.3em; font-weight: bold;">0</span><br>
@@ -83,6 +83,7 @@
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
+                        <!-- Barra de comentário igual ao index -->
                         <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
                             <div class="form-floating">
                                 <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
