@@ -625,35 +625,68 @@
 
         const likedPosts = {};
 
-function incrementLike(likeId, iconId) {
-    // Impede múltiplos likes na mesma publicação
-    if (likedPosts[likeId]) {
-        alert("Você já curtiu esta publicação!");
-        return;
-    }
+function incrementLike(likeId, iconId, postId) {
     const likeSpan = document.getElementById(likeId);
-    let count = parseInt(likeSpan.textContent, 10) || 0;
-    likeSpan.textContent = count + 1;
-    likedPosts[likeId] = true;
-
-    // Muda a cor do ícone para vermelho
     const icon = document.getElementById(iconId);
-    if (icon) {
-        icon.style.color = "#FF0000";
-        // Se for SVG, pode usar: icon.setAttribute("fill", "#FF0000");
+    let count = parseInt(likeSpan.textContent, 10) || 0;
+
+    if (likedPosts[likeId]) {
+        // Remover like
+        likeSpan.textContent = count > 0 ? count - 1 : 0;
+        likedPosts[likeId] = false;
+        if (icon) icon.style.color = "";
+        // Atualiza no banco de dados (requisição para o backend)
+        fetch('/api/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ postId: postId, action: 'decrement' })
+        });
+    } else {
+        // Adicionar like
+        likeSpan.textContent = count + 1;
+        likedPosts[likeId] = true;
+        if (icon) icon.style.color = "#FF0000";
+        // Atualiza no banco de dados (requisição para o backend)
+        fetch('/api/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ postId: postId, action: 'increment' })
+        });
     }
 }
 
-function incrementDislike(dislikeId) {
-    // Impede múltiplos dislikes na mesma publicação
-    if (likedPosts[dislikeId]) {
-        alert("Você já marcou dislike nesta publicação!");
-        return;
-    }
+function incrementDislike(dislikeId, iconId, postId) {
     const dislikeSpan = document.getElementById(dislikeId);
+    const icon = iconId ? document.getElementById(iconId) : null;
     let count = parseInt(dislikeSpan.textContent, 10) || 0;
-    dislikeSpan.textContent = count + 1;
-    likedPosts[dislikeId] = true;
+
+    if (likedPosts[dislikeId]) {
+        // Só permite remover o dislike se o usuário já tiver dado dislike
+        dislikeSpan.textContent = count > 0 ? count - 1 : 0;
+        likedPosts[dislikeId] = false;
+        if (icon) icon.style.color = "";
+        // Atualiza no banco de dados (requisição para o backend)
+        if (postId) {
+            fetch('/api/dislike', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ postId: postId, action: 'decrement' })
+            });
+        }
+    } else {
+        // Só permite adicionar dislike se ainda não deu dislike
+        dislikeSpan.textContent = count + 1;
+        likedPosts[dislikeId] = true;
+        if (icon) icon.style.color = "#FF0000";
+        // Atualiza no banco de dados (requisição para o backend)
+        if (postId) {
+            fetch('/api/dislike', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ postId: postId, action: 'increment' })
+            });
+        }
+    }
 }
     </script>
 </body>
