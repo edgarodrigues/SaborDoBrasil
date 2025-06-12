@@ -60,7 +60,8 @@
                 <div class="col-12 d-flex flex-column align-items-center mb-2">
                     <span class="mb-1" style="font-weight: bold; color: #000;">Feijoada brasileira</span>
                     <div class="card mb-4" style="width: 27rem; position: relative;">
-                        <img src="img/Feijoada_brasileira.jpg" class="card-img-top" alt="Feijoada brasileira">
+                        <img src="img/Feijoada_brasileira.jpg" class="card-img-top" alt="Feijoada brasileira"
+                            style="cursor:pointer;" onclick="openCommentFormByCard(1)">
                         <div class="card-body text-center">
                             <ul id="comments1" class="list-unstyled mt-2 text-start" style="font-size: 0.95em;"></ul>
                         </div>
@@ -84,7 +85,7 @@
                             <div
                                 style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm1', 'floatingTextarea1')"></i>
+                                    onclick="openCommentFormByCard(1)"></i>
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
                             </div>
                         </div>
@@ -96,7 +97,7 @@
                                 <label for="floatingTextarea1">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
-                                onclick="submitFloatingComment('comments1','floatingTextarea1','commentCount1')">Enviar</button>
+                                onclick="submitFloatingComment('comments1','floatingTextarea1','commentCount1')">Comentar</button>
                         </div>
                     </div>
                 </div>
@@ -126,8 +127,8 @@
                             <div
                                 style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm2', 'floatingTextarea2')"></i>
-                                <span id="commentCount2" style="font-weight:bold; margin-left:4px;">0</span>
+                                    onclick="openCommentFormByCard(2)"></i>
+                                <span id="commentCount2" style="font-weight:bold;">0</span>
                             </div>
                         </div>
                         <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
@@ -137,7 +138,7 @@
                                 <label for="floatingTextarea2">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
-                                onclick="submitFloatingComment('comments2','floatingTextarea2','commentCount2')">Enviar</button>
+                                onclick="submitFloatingComment('comments2','floatingTextarea2','commentCount2')">Comentar</button>
                         </div>
                     </div>
                 </div>
@@ -167,7 +168,7 @@
                             <div
                                 style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
-                                    onclick="toggleCommentForm('commentForm3', 'floatingTextarea3')"></i>
+                                    onclick="openCommentFormByCard(3)"></i>
                                 <span id="commentCount3" style="font-weight:bold;">0</span>
                             </div>
                         </div>
@@ -178,7 +179,7 @@
                                 <label for="floatingTextarea3">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
-                                onclick="submitFloatingComment('comments3','floatingTextarea3','commentCount3')">Enviar</button>
+                                onclick="submitFloatingComment('comments3','floatingTextarea3','commentCount3')">Comentar</button>
                         </div>
                     </div>
                 </div>
@@ -281,7 +282,7 @@
                     <button type="button" class="btn btn-sm btn-outline-secondary ms-2" onclick="editComment(this)">
                         <i class="bi bi-pencil"></i>
                     </button>
-                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="this.closest('li').remove(); updateCommentCount('${commentsId}','${countId}')">
+                    <button type="button" class="btn btn-sm btn-outline-danger ms-2" onclick="askDeleteComment(this)">
                         <i class="bi bi-trash"></i>
                     </button>
                 </div>
@@ -338,7 +339,7 @@
                 likedPosts[likeId] = false;
             } else {
                 // Só permite dar like se não deu dislike
-                if (likedPosts['dislike' + likeId.substring(4)]) {
+                if (likedPosts['dislike' + likeId.substring(4)] === true) {
                     alert("Você já deu dislike nesta publicação!");
                     return;
                 }
@@ -356,20 +357,142 @@
             if (likedPosts[dislikeId] === true) {
                 dislikeSpan.textContent = count > 0 ? count - 1 : 0;
                 likedPosts[dislikeId] = false;
+
+                // Persistir alteração no banco de dados (decrementar)
+                fetch('/api/dislike', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ postId: postId, action: 'decrement' })
+                });
             } else {
                 // Só permite dar dislike se não deu like
-                if (likedPosts['like' + dislikeId.substring(7)]) {
+                if (likedPosts['like' + dislikeId.substring(7)] === true) {
                     alert("Você já curtiu esta publicação!");
                     return;
                 }
                 dislikeSpan.textContent = count + 1;
                 likedPosts[dislikeId] = true;
+
+                // Persistir alteração no banco de dados (incrementar)
+                fetch('/api/dislike', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ postId: postId, action: 'increment' })
+                });
             }
             updateMainLikeDislike();
         }
 
         // Garante que o contador será atualizado após o DOM estar pronto
         document.addEventListener('DOMContentLoaded', updateMainLikeDislike);
+    </script>
+    <script>
+        function openCommentFormByCard(cardNumber) {
+            // Exibe ou esconde o formulário de comentário do card correspondente
+            const formId = 'commentForm' + cardNumber;
+            const textareaId = 'floatingTextarea' + cardNumber;
+            const form = document.getElementById(formId);
+            if (form) {
+                // Alterna entre mostrar e esconder
+                if (form.style.display === "block") {
+                    form.style.display = "none";
+                } else {
+                    form.style.display = "block";
+                    setTimeout(() => {
+                        const textarea = document.getElementById(textareaId);
+                        if (textarea) textarea.focus();
+                    }, 100);
+                }
+            }
+        }
+    </script>
+
+    <!-- Modal para confirmação de exclusão de comentário -->
+    <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteCommentModalLabel">Excluir comentário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    Tem certeza que deseja excluir este comentário?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteCommentBtn">Sim</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let commentToDelete = null;
+
+        // Altere o botão de excluir comentário para chamar esta função:
+        function askDeleteComment(btn) {
+            commentToDelete = btn.closest('li');
+            const modal = new bootstrap.Modal(document.getElementById('deleteCommentModal'));
+            modal.show();
+        }
+
+        // Ao clicar em "Sim", remove o comentário
+        document.addEventListener('DOMContentLoaded', function () {
+            const confirmBtn = document.getElementById('confirmDeleteCommentBtn');
+            if (confirmBtn) {
+                confirmBtn.onclick = function () {
+                    if (commentToDelete) {
+                        const ul = commentToDelete.parentElement;
+                        commentToDelete.remove();
+                        commentToDelete = null;
+                        // Atualize o contador de comentários se necessário
+                        if (ul && ul.id && ul.id.startsWith('comments')) {
+                            const cardNum = ul.id.replace('comments', '');
+                            const countId = 'commentCount' + cardNum;
+                            if (typeof updateCommentCount === 'function') {
+                                updateCommentCount(ul.id, countId);
+                            }
+                        }
+                    }
+                    bootstrap.Modal.getInstance(document.getElementById('deleteCommentModal')).hide();
+                };
+            }
+        });
+    </script>
+    <script>
+        function editComment(editBtn) {
+            // Busca o span do comentário
+            const commentSpan = editBtn.closest('div').parentElement.querySelector('.comment-text');
+            if (!commentSpan) return;
+
+            // Cria um input para edição
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = commentSpan.textContent;
+            input.className = 'form-control form-control-sm';
+            input.style.maxWidth = '300px';
+
+            // Substitui o span pelo input
+            commentSpan.replaceWith(input);
+            input.focus();
+
+            // Salva ao pressionar Enter ou perder o foco
+            function saveEdit() {
+                const newText = input.value.trim() || commentSpan.textContent;
+                const newSpan = document.createElement('span');
+                newSpan.className = 'comment-text';
+                newSpan.textContent = newText;
+                input.replaceWith(newSpan);
+            }
+
+            input.addEventListener('blur', saveEdit);
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    input.blur();
+                }
+            });
+        }
     </script>
 </body>
 

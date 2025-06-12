@@ -618,8 +618,9 @@
 
         function loginRedirect(event) {
             event.preventDefault();
-            // Aqui você pode validar os campos se desejar
-            window.location.href = "perfil.html"; // Altere para o nome correto da página de perfil do usuário
+            // Aqui você pode validar o e-mail e senha se desejar
+            // Após o login, redireciona para a aba de perfil:
+            window.location.href = "perfil.html";
             return false;
         }
 
@@ -634,13 +635,18 @@ function incrementLike(likeId) {
         likeSpan.textContent = count > 0 ? count - 1 : 0;
         likedPosts[likeId] = false;
     } else {
+        // Só permite dar like se não deu dislike
+        if (likedPosts['dislike' + likeId.substring(4)] === true) {
+            alert("Você já deu dislike nesta publicação!");
+            return;
+        }
         likeSpan.textContent = count + 1;
         likedPosts[likeId] = true;
     }
     updateMainLikeDislike();
 }
 
-function incrementDislike(dislikeId) {
+function incrementDislike(dislikeId, postId) {
     const dislikeSpan = document.getElementById(dislikeId);
     let count = parseInt(dislikeSpan.textContent, 10) || 0;
 
@@ -648,9 +654,28 @@ function incrementDislike(dislikeId) {
     if (likedPosts[dislikeId] === true) {
         dislikeSpan.textContent = count > 0 ? count - 1 : 0;
         likedPosts[dislikeId] = false;
+
+        // Persistir alteração no banco de dados (decrementar)
+        fetch('/api/dislike', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ postId: postId, action: 'decrement' })
+        });
     } else {
+        // Só permite dar dislike se não deu like
+        if (likedPosts['like' + dislikeId.substring(7)] === true) {
+            alert("Você já curtiu esta publicação!");
+            return;
+        }
         dislikeSpan.textContent = count + 1;
         likedPosts[dislikeId] = true;
+
+        // Persistir alteração no banco de dados (incrementar)
+        fetch('/api/dislike', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ postId: postId, action: 'increment' })
+        });
     }
     updateMainLikeDislike();
 }
