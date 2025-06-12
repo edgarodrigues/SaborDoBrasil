@@ -625,68 +625,34 @@
 
         const likedPosts = {};
 
-function incrementLike(likeId, iconId, postId) {
+function incrementLike(likeId) {
     const likeSpan = document.getElementById(likeId);
-    const icon = document.getElementById(iconId);
     let count = parseInt(likeSpan.textContent, 10) || 0;
 
-    if (likedPosts[likeId]) {
-        // Remover like
+    // Se já curtiu, desfaz o like
+    if (likedPosts[likeId] === true) {
         likeSpan.textContent = count > 0 ? count - 1 : 0;
         likedPosts[likeId] = false;
-        if (icon) icon.style.color = "";
-        // Atualiza no banco de dados (requisição para o backend)
-        fetch('/api/like', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ postId: postId, action: 'decrement' })
-        });
     } else {
-        // Adicionar like
         likeSpan.textContent = count + 1;
         likedPosts[likeId] = true;
-        if (icon) icon.style.color = "#FF0000";
-        // Atualiza no banco de dados (requisição para o backend)
-        fetch('/api/like', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ postId: postId, action: 'increment' })
-        });
     }
+    updateMainLikeDislike();
 }
 
-function incrementDislike(dislikeId, iconId, postId) {
+function incrementDislike(dislikeId) {
     const dislikeSpan = document.getElementById(dislikeId);
-    const icon = iconId ? document.getElementById(iconId) : null;
     let count = parseInt(dislikeSpan.textContent, 10) || 0;
 
-    if (likedPosts[dislikeId]) {
-        // Só permite remover o dislike se o usuário já tiver dado dislike
+    // Se já deu dislike, desfaz o dislike
+    if (likedPosts[dislikeId] === true) {
         dislikeSpan.textContent = count > 0 ? count - 1 : 0;
         likedPosts[dislikeId] = false;
-        if (icon) icon.style.color = "";
-        // Atualiza no banco de dados (requisição para o backend)
-        if (postId) {
-            fetch('/api/dislike', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ postId: postId, action: 'decrement' })
-            });
-        }
     } else {
-        // Só permite adicionar dislike se ainda não deu dislike
         dislikeSpan.textContent = count + 1;
         likedPosts[dislikeId] = true;
-        if (icon) icon.style.color = "#FF0000";
-        // Atualiza no banco de dados (requisição para o backend)
-        if (postId) {
-            fetch('/api/dislike', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ postId: postId, action: 'increment' })
-            });
-        }
     }
+    updateMainLikeDislike();
 }
     </script>
 </body>

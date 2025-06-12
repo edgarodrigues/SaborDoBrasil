@@ -29,7 +29,8 @@
             </button>
             <hr style="border: none; border-top: 3px solid rgba(245, 145, 30, 0.932); width: 110px; margin: 4px 0 0 0;">
             <!-- Likes e dislikes alinhados à esquerda, logo abaixo da linha laranja -->
-            <div class="mt-3" style="display: flex; flex-direction: row; gap: 24px; justify-content: flex-start; width: 110px;">
+            <div class="mt-3"
+                style="display: flex; flex-direction: row; gap: 24px; justify-content: flex-start; width: 110px;">
                 <div>
                     <span id="main-like" style="font-size: 1.3em; font-weight: bold;">0</span><br>
                     <span style="font-size: 0.85em;">likes</span>
@@ -65,11 +66,13 @@
                         </div>
                         <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <div style="display: inline-block; padding: 10px 0 10px 10px;">
-                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like1')">
+                                <!-- Exemplo para o card 1 -->
+                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like1', null, 1)">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
                                 <span id="like1" style="font-weight:bold;">0</span>
-                                <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike1')">
+                                <button class="btn ms-3" style="border:none;"
+                                    onclick="incrementDislike('dislike1', null, 1)">
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike1" style="font-weight:bold;">0</span>
@@ -78,7 +81,8 @@
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
                             <!-- Balão de comentário e número -->
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
+                            <div
+                                style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
                                     onclick="toggleCommentForm('commentForm1', 'floatingTextarea1')"></i>
                                 <span id="commentCount1" style="font-weight:bold; margin-left:4px;">0</span>
@@ -87,8 +91,8 @@
                         <!-- Barra de comentário: aparece ao clicar no balão -->
                         <div id="commentForm1" style="display:none; padding: 10px 10px 0 10px;">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea1"
-                                    style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui"
+                                    id="floatingTextarea1" style="height: 100px"></textarea>
                                 <label for="floatingTextarea1">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
@@ -106,11 +110,12 @@
                         </div>
                         <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <div style="display: inline-block; padding: 10px 0 10px 10px;">
-                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like2')">
+                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like2', null, 2)">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
                                 <span id="like2" style="font-weight:bold;">0</span>
-                                <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike2')">
+                                <button class="btn ms-3" style="border:none;"
+                                    onclick="incrementDislike('dislike2', null, 2)">
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike2" style="font-weight:bold;">0</span>
@@ -118,7 +123,8 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">Salvador, BA</span>
                             </div>
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
+                            <div
+                                style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
                                     onclick="toggleCommentForm('commentForm2', 'floatingTextarea2')"></i>
                                 <span id="commentCount2" style="font-weight:bold; margin-left:4px;">0</span>
@@ -126,8 +132,8 @@
                         </div>
                         <div id="commentForm2" style="display:none; padding: 10px 10px 0 10px;">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea2"
-                                    style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui"
+                                    id="floatingTextarea2" style="height: 100px"></textarea>
                                 <label for="floatingTextarea2">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
@@ -145,11 +151,12 @@
                         </div>
                         <div class="card-footer bg-white border-0 p-0" style="position: relative;">
                             <div style="display: inline-block; padding: 10px 0 10px 10px;">
-                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like3')">
+                                <button class="btn me-2" style="border:none;" onclick="incrementLike('like3', null, 3)">
                                     <i class="bi bi-hand-thumbs-up"></i>
                                 </button>
                                 <span id="like3" style="font-weight:bold;">0</span>
-                                <button class="btn ms-3" style="border:none;" onclick="incrementDislike('dislike3')">
+                                <button class="btn ms-3" style="border:none;"
+                                    onclick="incrementDislike('dislike3', null, 3)">
                                     <i class="bi bi-hand-thumbs-down"></i>
                                 </button>
                                 <span id="dislike3" style="font-weight:bold;">0</span>
@@ -157,16 +164,17 @@
                             <div style="position: absolute; right: 10px; bottom: 38px; text-align: right;">
                                 <span style="font-size: 0.95em; color: #444;">São Paulo, SP</span>
                             </div>
-                            <div style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
+                            <div
+                                style="display: inline-block; position: absolute; right: 10px; bottom: 10px; z-index:2;">
                                 <i class="bi bi-chat-right" style="font-size: 1.4em; color: #D97014; cursor:pointer;"
                                     onclick="toggleCommentForm('commentForm3', 'floatingTextarea3')"></i>
-                                <span id="commentCount3" style="font-weight:bold; margin-left:4px;">0</span>
+                                <span id="commentCount3" style="font-weight:bold;">0</span>
                             </div>
                         </div>
                         <div id="commentForm3" style="display:none; padding: 10px 10px 0 10px;">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Deixe um comentário aqui" id="floatingTextarea3"
-                                    style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Deixe um comentário aqui"
+                                    id="floatingTextarea3" style="height: 100px"></textarea>
                                 <label for="floatingTextarea3">Comentário</label>
                             </div>
                             <button class="btn btn-sm btn-primary mt-2 float-end"
@@ -188,16 +196,20 @@
                     <strong>Sabor do Brasil</strong><br>
                 </div>
                 <div class="col-md-4">
-                    <a href="mailto:sabordobrasil@email.com" target="_blank" style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
+                    <a href="mailto:sabordobrasil@email.com" target="_blank"
+                        style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
                         <i class="bi bi-envelope-fill"></i>
                     </a>
-                    <a href="https://www.instagram.com/sabordobrasil" target="_blank" style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
+                    <a href="https://www.instagram.com/sabordobrasil" target="_blank"
+                        style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
                         <i class="bi bi-instagram"></i>
                     </a>
-                    <a href="https://www.facebook.com/sabordobrasil" target="_blank" style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
+                    <a href="https://www.facebook.com/sabordobrasil" target="_blank"
+                        style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
                         <i class="bi bi-facebook"></i>
                     </a>
-                    <a href="https://wa.me/5511998123376" target="_blank" style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
+                    <a href="https://wa.me/5511998123376" target="_blank"
+                        style="color:#fff; text-decoration:none; font-size:1.5em; margin:0 8px;">
                         <i class="bi bi-whatsapp"></i>
                     </a>
                 </div>
@@ -209,69 +221,23 @@
         </div>
     </footer>
 
-    <!-- Modal de Login -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form onsubmit="return loginRedirect(event)">
-            <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Entrar</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="loginEmail" required>
-              </div>
-              <div class="mb-3">
-                <label for="loginSenha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="loginSenha" required>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn" style="background:#D97014; color:#FFF; width:50%;">Entrar</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+
 
     <!-- Exemplo de formulário de cadastro funcional para a aba "Cadastrar" (cadastro.html) -->
 
-<!-- Adicione este formulário dentro do <body> da sua página cadastro.html -->
-<div class="container mt-5" style="max-width: 400px;">
-    <h2 class="mb-4 text-center">Cadastro</h2>
-    <form id="cadastroForm" onsubmit="return cadastrarUsuario(event)">
-        <div class="mb-3">
-            <label for="nomeCadastro" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nomeCadastro" required>
-        </div>
-        <div class="mb-3">
-            <label for="emailCadastro" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="emailCadastro" required>
-        </div>
-        <div class="mb-3">
-            <label for="senhaCadastro" class="form-label">Senha</label>
-            <input type="password" class="form-control" id="senhaCadastro" required>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
-    </form>
-    <div id="cadastroMsg" class="mt-3 text-success text-center" style="display:none;">
-        Cadastro realizado com sucesso!
-    </div>
-</div>
 
-<script>
-function cadastrarUsuario(event) {
-    event.preventDefault();
-    // Aqui você pode adicionar validação extra ou salvar no localStorage
-    document.getElementById('cadastroMsg').style.display = 'block';
-    setTimeout(() => {
-        window.location.href = "index.html"; // Redireciona para a página principal após cadastro
-    }, 1500);
-    return false;
-}
-</script>
+
+    <script>
+        function cadastrarUsuario(event) {
+            event.preventDefault();
+            // Aqui você pode adicionar validação extra ou salvar no localStorage
+            document.getElementById('cadastroMsg').style.display = 'block';
+            setTimeout(() => {
+                window.location.href = "index.html"; // Redireciona para a página principal após cadastro
+            }, 1500);
+            return false;
+        }
+    </script>
 
     <!-- Modais de Comentário (se usar modais) -->
     <!-- ...copie os modais de comentário do index.html, se necessário... -->
@@ -279,35 +245,35 @@ function cadastrarUsuario(event) {
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <!-- Copie também todos os scripts JS do index.html para cá -->
     <script>
         // ...cole aqui todas as funções JS do index.html...
     </script>
     <script>
-document.getElementById('profile-pic-input').addEventListener('change', function (e) {
-    const file = e.target.files[0];
-    if (file && file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = function (evt) {
-            document.getElementById('profile-pic').src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-});
-</script>
-<!-- Adapte a função submitFloatingComment para incluir a foto de perfil do usuário em cada comentário -->
-<script>
-function submitFloatingComment(commentsId, textareaId, countId) {
-    const textarea = document.getElementById(textareaId);
-    const commentsList = document.getElementById(commentsId);
-    const comment = textarea.value.trim();
-    if (comment) {
-        // Pega a foto de perfil atual
-        const profilePic = document.getElementById('profile-pic').src;
-        const li = document.createElement('li');
-        li.className = "d-flex align-items-start mb-2";
-        li.innerHTML = `
+        document.getElementById('profile-pic-input').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (evt) {
+                    document.getElementById('profile-pic').src = evt.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+    <!-- Adapte a função submitFloatingComment para incluir a foto de perfil do usuário em cada comentário -->
+    <script>
+        function submitFloatingComment(commentsId, textareaId, countId) {
+            const textarea = document.getElementById(textareaId);
+            const commentsList = document.getElementById(commentsId);
+            const comment = textarea.value.trim();
+            if (comment) {
+                // Pega a foto de perfil atual
+                const profilePic = document.getElementById('profile-pic').src;
+                const li = document.createElement('li');
+                li.className = "d-flex align-items-start mb-2";
+                li.innerHTML = `
             <img src="${profilePic}" alt="Foto do perfil" width="36" height="36" class="rounded-circle me-2" style="object-fit:cover;">
             <div class="flex-grow-1 d-flex justify-content-between align-items-center">
                 <span class="comment-text">${comment}</span>
@@ -321,30 +287,90 @@ function submitFloatingComment(commentsId, textareaId, countId) {
                 </div>
             </div>
         `;
-        commentsList.appendChild(li);
-        textarea.value = '';
-        updateCommentCount(commentsId, countId);
-    }
-}
-</script>
-<script>
-function logoutRedirect() {
-    window.location.href = "index.html";
-}
-</script>
-<script>
-function toggleCommentForm(formId, textareaId) {
-    const el = document.getElementById(formId);
-    if (el.style.display === "none" || el.style.display === "") {
-        el.style.display = "block";
-        setTimeout(() => {
-            const textarea = document.getElementById(textareaId);
-            if (textarea) textarea.focus();
-        }, 100);
-    } else {
-        el.style.display = "none";
-    }
-}
-</script>
+                commentsList.appendChild(li);
+                textarea.value = '';
+                updateCommentCount(commentsId, countId);
+            }
+        }
+    </script>
+    <script>
+        function logoutRedirect() {
+            window.location.href = "index.html";
+        }
+    </script>
+    <script>
+        function toggleCommentForm(formId, textareaId) {
+            const el = document.getElementById(formId);
+            if (el.style.display === "none" || el.style.display === "") {
+                el.style.display = "block";
+                setTimeout(() => {
+                    const textarea = document.getElementById(textareaId);
+                    if (textarea) textarea.focus();
+                }, 100);
+            } else {
+                el.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        const likedPosts = {};
+
+        function updateMainLikeDislike() {
+            let totalLikes = 0;
+            let totalDislikes = 0;
+            for (let i = 1; i <= 3; i++) {
+                const likeSpan = document.getElementById('like' + i);
+                const dislikeSpan = document.getElementById('dislike' + i);
+                if (likeSpan) totalLikes += parseInt(likeSpan.textContent, 10) || 0;
+                if (dislikeSpan) totalDislikes += parseInt(dislikeSpan.textContent, 10) || 0;
+            }
+            document.getElementById('main-like').textContent = totalLikes;
+            document.getElementById('main-dislike').textContent = totalDislikes;
+        }
+
+        function incrementLike(likeId, iconId, postId) {
+            const likeSpan = document.getElementById(likeId);
+            let count = parseInt(likeSpan.textContent, 10) || 0;
+
+            // Se já curtiu, desfaz o like
+            if (likedPosts[likeId] === true) {
+                likeSpan.textContent = count > 0 ? count - 1 : 0;
+                likedPosts[likeId] = false;
+            } else {
+                // Só permite dar like se não deu dislike
+                if (likedPosts['dislike' + likeId.substring(4)]) {
+                    alert("Você já deu dislike nesta publicação!");
+                    return;
+                }
+                likeSpan.textContent = count + 1;
+                likedPosts[likeId] = true;
+            }
+            updateMainLikeDislike();
+        }
+
+        function incrementDislike(dislikeId, iconId, postId) {
+            const dislikeSpan = document.getElementById(dislikeId);
+            let count = parseInt(dislikeSpan.textContent, 10) || 0;
+
+            // Se já deu dislike, desfaz o dislike
+            if (likedPosts[dislikeId] === true) {
+                dislikeSpan.textContent = count > 0 ? count - 1 : 0;
+                likedPosts[dislikeId] = false;
+            } else {
+                // Só permite dar dislike se não deu like
+                if (likedPosts['like' + dislikeId.substring(7)]) {
+                    alert("Você já curtiu esta publicação!");
+                    return;
+                }
+                dislikeSpan.textContent = count + 1;
+                likedPosts[dislikeId] = true;
+            }
+            updateMainLikeDislike();
+        }
+
+        // Garante que o contador será atualizado após o DOM estar pronto
+        document.addEventListener('DOMContentLoaded', updateMainLikeDislike);
+    </script>
 </body>
+
 </html>
